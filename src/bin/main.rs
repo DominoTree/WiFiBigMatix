@@ -4,10 +4,13 @@
 extern crate alloc;
 
 use esp_backtrace as _;
+use esp_hal::main;
+use esp_hal::clock::CpuClock;
 use esp_hal::delay::Delay;
 use esp_hal::gpio::Output;
+use esp_hal::rng::Rng;
 use esp_hal::time::Duration;
-use esp_hal::{main, clock::CpuClock, rng::Rng, timer::timg::TimerGroup};
+use esp_hal::timer::timg::TimerGroup;
 use esp_wifi::{init, wifi};
 use ieee80211::{data_frame::DataFrame, match_frames, mgmt_frame::DeauthenticationFrame};
 use log::info;
